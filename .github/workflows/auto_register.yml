@@ -2,7 +2,7 @@ name: Ejecutar script de Python
 
 on:
   schedule:
-    - cron: '0 16 * * *'  # Ejecutar todos los días a las 16:00 UTC
+    - cron: '0 21 * * *'  # 4:00 PM en Austin (21:00 UTC)
   workflow_dispatch:
   push:
     branches:

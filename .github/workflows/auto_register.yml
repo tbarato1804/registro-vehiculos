@@ -19,6 +19,9 @@ jobs:
           sudo apt install -y chromium-browser chromium-chromedriver
           pip install selenium
 
+      - name: Listar archivos presentes
+        run: ls -la ${{ github.workspace }}
+
       - name: Ejecutar el script
         working-directory: ${{ github.workspace }}
         run: python script.py

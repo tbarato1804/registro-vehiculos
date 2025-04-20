@@ -20,4 +20,5 @@ jobs:
           pip install selenium
 
       - name: Ejecutar el script
+        working-directory: ${{ github.workspace }}
         run: python script.py

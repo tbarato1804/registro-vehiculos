@@ -13,15 +13,16 @@ jobs:
       - name: Clonar el repositorio
         uses: actions/checkout@v3
 
+      - name: Verificar estructura de directorios
+        run: |
+          echo "Estructura de archivos en el repositorio:"
+          ls -R
+
       - name: Instalar dependencias
         run: |
           sudo apt update
           sudo apt install -y chromium-browser chromium-chromedriver
           pip install selenium
 
-      - name: Listar archivos presentes
-        run: ls -la ${{ github.workspace }}
-
       - name: Ejecutar el script
-        working-directory: ${{ github.workspace }}
         run: python registro-vehiculos/script.py

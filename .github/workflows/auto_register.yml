@@ -1,0 +1,23 @@
+name: Registro de Vehículos Diario
+
+on:
+  schedule:
+    - cron: '0 10 * * *'  # ⏰ Corre todos los días a las 10:00 UTC
+  workflow_dispatch:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar el repositorio
+        uses: actions/checkout@v3
+
+      - name: Instalar dependencias
+        run: |
+          sudo apt update
+          sudo apt install -y chromium-browser chromium-chromedriver
+          pip install selenium
+
+      - name: Ejecutar el script
+        run: python script.py

@@ -20,4 +20,4 @@ jobs:
           pip install selenium
 
       - name: Ejecutar el script
-        run: python script.py
+        run: python script.py.py
